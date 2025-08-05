@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct AppBackgroundView<Content: View>: View {
-    let content: Content
+    let content: () -> Content
     
-    init(@ViewBuilder content: () -> Content) {
-        self.content = content()
+    init(@ViewBuilder content: @escaping () -> Content) {
+        self.content = content
     }
     
     var body: some View {
@@ -20,7 +20,7 @@ struct AppBackgroundView<Content: View>: View {
                 .resizable()
                 .scaledToFill()
                 .ignoresSafeArea()
-            content
+            content()
         }
     }
 }

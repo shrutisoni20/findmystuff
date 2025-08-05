@@ -15,7 +15,6 @@ struct HomeView: View {
 
     var body: some View {
         NavigationStack {
-            
             VStack{
                 Image("FindMyStuff").resizable()
             }
@@ -45,25 +44,3 @@ struct HomeView: View {
 #Preview {
     HomeView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
 }
-
-
-//VStack(alignment: .leading, spacing: 25){
-//    Text("Find My Stuff").bold().font(.title)
-//    Text("Visually catalog where you've stored your items and easily locate them later.")
-//Button(
-//    action: {
-//
-//    })
-//{
-//    HStack {
-//        Image(systemName: "camera.fill")
-//            .font(.title)
-//        Text("Add Item")
-//            .font(.title2)
-//
-//    }.frame(maxWidth: .infinity, alignment: .leading)
-//}
-//.buttonStyle(.borderedProminent)
-//.cornerRadius(25)
-// Text("Storage Locations").bold().font(.headline)
-//}.padding()
