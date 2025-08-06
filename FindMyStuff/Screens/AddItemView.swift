@@ -66,25 +66,15 @@ struct AddItemView: View {
                         }
                     }
                     VStack(alignment: .leading, spacing: 20) {
-                        Text("Item Name")
-                            .font(.headline)
-                        TextField("Enter item name", text: $itemName)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                        Text("Describe item location")
-                            .font(.headline)
-                        TextEditor(text: $itemDescription)
-                            .frame(height: 100)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 5)
-                                    .stroke(Color.gray.opacity(0.5), lineWidth: 1)
-                            )
+                        RichTextField(title: "Item Name", text: $itemName)
+                        RichTextField(title: "Describe item location", text: $itemDescription)
                         Button(action: { saveItem() }) {
                             Text("Save Item")
                                 .font(.headline)
                                 .frame(maxWidth: .infinity, minHeight: 45)
                                 .background(Color.black)
                                 .foregroundColor(.white)
-                                .cornerRadius(8)
+                                .cornerRadius(20)
                                 .padding(.top, 20)
                         }
                         .alert(item: $activeAlert) { alert in
